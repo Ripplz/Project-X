@@ -19,7 +19,7 @@ export async function POST(request: Request) {
             .select('email')
             .eq('email', email)
             .single()
-
+        console.log('existing email', existingEmail)
         if (existingEmail) {
             return NextResponse.json(
                 { message: 'Email already registered' },

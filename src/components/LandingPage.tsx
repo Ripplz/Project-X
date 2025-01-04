@@ -1,7 +1,6 @@
 'use client';
 
-import {useState} from 'react';
-import {Card} from '@/components/ui/card';
+import { useState } from 'react';
 import Image from "next/image";
 
 type SubmissionState = 'idle' | 'loading' | 'success' | 'error';
@@ -18,8 +17,8 @@ const LandingPage = () => {
         try {
             const response = await fetch('/api/waitlist', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({email})
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
             });
 
             const data = await response.json();
@@ -63,34 +62,31 @@ const LandingPage = () => {
                 </svg>
             </div>
 
-            {/* Main Content */}
-            <main className="max-w-6xl mx-auto px-6 py-24 relative">
+            {/* Main Content Container */}
+            <div className="relative min-h-[calc(100vh-200px)] flex items-center justify-center">
                 {/* Left Image */}
-
-                <Image
-                    src="/images/left-image.png"
-                    alt="Left Decorative Image"
-                    width={300}
-                    height={400}
-                    priority
-                    className="absolute left-0 top-1/2 -translate-y-1/2"
-                />
-
+                <div className="absolute -left-20 top-1/2 -translate-y-1/2 w-80 h-96 overflow-hidden">
+                    <Image
+                        src="/images/left-image.png"
+                        alt="Classic film still"
+                        className="w-full h-full object-cover"
+                        width={444}
+                        height={572}
+                    />
+                </div>
 
                 {/* Right Image */}
-
                 <Image
                     src="/images/right-image.png"
                     alt="Right Decorative Image"
                     width={300}
                     height={400}
                     priority
-                    className="absolute right-0 top-1/2 -translate-y-1/2"
+                    className="absolute -right-36 top-1/2 -translate-y-1/2 scale-x-[-1]"
                 />
 
-
                 {/* Center Content */}
-                <div className="max-w-3xl mx-auto text-center">
+                <div className="max-w-3xl mx-auto text-center px-4">
                     <h1 className="text-6xl font-bold mb-8">
                         Cinema, Reimagined.
                     </h1>
@@ -128,7 +124,7 @@ const LandingPage = () => {
                         </p>
                     )}
                 </div>
-            </main>
+            </div>
 
             {/* Footer */}
             <footer className="absolute bottom-0 w-full border-t border-gray-200">
@@ -140,8 +136,7 @@ const LandingPage = () => {
                         <div className="flex gap-8">
                             <a href="#" className="text-sm text-gray-600 hover:text-black">INSTAGRAM</a>
                             <a href="#" className="text-sm text-gray-600 hover:text-black">TWITTER</a>
-                            <a href="#" className="text-sm text-gray-600 hover:text-black">FILMMAKER? PARTNER WITH
-                                US</a>
+                            <a href="#" className="text-sm text-gray-600 hover:text-black">FILMMAKER? PARTNER WITH US</a>
                         </div>
                     </div>
                 </div>
