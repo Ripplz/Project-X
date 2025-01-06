@@ -204,11 +204,9 @@ const LandingPage = () => {
                             {/* text */}
                             <div className="flex flex-col w-[320px] text-center items-center justify-center gap-2">
                                 <p className="text-xl">
-                                    You're <span
-                                    className="font-parkinsSemiBold">#{waitlistPosition?.toLocaleString()}</span> on the
+                                    You&apos;re <span className="font-parkinsSemiBold">#{waitlistPosition}</span> on the
                                     waitlist!
                                 </p>
-
                                 <p className="text-[#6B6B6B]">
                                     Want to move up on the list? Just get your friends to sign up.
                                 </p>
