@@ -130,7 +130,7 @@ const LandingPage = () => {
 
                         {/* Status message below form elements */}
                         {message && (
-                            <p className={`mt-4 text-center ${state === 'error' ? 'text-red-500' : 'text-green-500'}`}>
+                            <p className={`mt-4 text-center ${state === 'error' ? 'text-red-500' : 'text-[#686868]'}`}>
                                 {message}
                             </p>
                         )}
@@ -162,7 +162,7 @@ const LandingPage = () => {
 
                         {/* Status message below form elements */}
                         {message && (
-                            <p className={`mt-4 text-center ${state === 'error' ? 'text-red-500' : 'text-green-500'}`}>
+                            <p className={`mt-4 text-center ${state === 'error' ? 'text-red-500' : 'text-[#686868]'}`}>
                                 {message}
                             </p>
                         )}
