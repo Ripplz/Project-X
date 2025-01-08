@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Project X - Cinema Reimagined",
+    title: "Bea Films - Cinema Reimagined",
     description: "Experience exclusive film releases from anywhere in the world",
     icons: {
         icon: "/favicon.ico",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     },
     // Optional: Open Graph metadata
     openGraph: {
-        title: "Project X - Cinema Reimagined",
+        title: "Bea Films - Cinema Reimagined",
         description: "Experience exclusive film releases from anywhere in the world",
         images: ["/og-image.png"],
     },
