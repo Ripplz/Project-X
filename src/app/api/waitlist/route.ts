@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
+import { sendWelcomeEmail } from '@/lib/resend'
 
 const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
 
@@ -41,8 +42,20 @@ export async function POST(request: Request) {
 
         if (error) throw error
 
+        // Get total count for waitlist position
+        const { count } = await supabase
+            .from('waitlist')
+            .select('*', { count: 'exact' })
+
+        // Send welcome email
+        await sendWelcomeEmail(email, count || 1)
+
         return NextResponse.json(
-            { message: 'Successfully joined waitlist', data },
+            {
+                message: 'Successfully joined waitlist',
+                data,
+                position: count
+            },
             { status: 200 }
         )
     } catch (error) {
