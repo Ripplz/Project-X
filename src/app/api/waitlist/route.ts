@@ -48,7 +48,7 @@ export async function POST(request: Request) {
             .select('*', { count: 'exact' })
 
         // Send welcome email
-        await sendWelcomeEmail(email, count || 1)
+        await sendWelcomeEmail(email)
 
         return NextResponse.json(
             {
